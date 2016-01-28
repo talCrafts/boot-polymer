@@ -118,14 +118,18 @@
                 <p class="paper-font-subhead">You might be looking at:</p>
                 <my-list></my-list>
               </paper-material>
-              <paper-material elevation="1">
 
+              <paper-material elevation="1">
+                  <paper-input label="first name" type="search" placeholder="First Name" autosave="test" results="5">
+                  </paper-input>
+                  <paper-input label="last name" type="search" placeholder="Last Name" autosave="test" results="5">
+                  </paper-input>
               </paper-material>
             </section>
 
             <section data-route="users">
               <paper-material elevation="1">
-                <product-list></product-list>
+                
                 <h2 class="page-title">Products</h2>
                 <p>This is the products section</p>
                 <a href$="{{baseUrl}}users/LIC">LIC</a><br>
