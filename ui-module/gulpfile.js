@@ -13,6 +13,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
+var url = require('url');
+var proxy = require('proxy-middleware');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -239,6 +241,8 @@ gulp.task('clean', function() {
 
 // Watch files for changes & reload
 gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
+  var proxyOptions = url.parse('http://localhost:8080/api');
+  proxyOptions.route = '/api';
   browserSync({
     port: 5000,
     notify: false,
@@ -257,7 +261,7 @@ gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
     // https: true,
     server: {
       baseDir: ['.tmp', 'app'],
-      middleware: [historyApiFallback()],
+      middleware: [proxy(proxyOptions)],
       routes: {
         '/bower_components': 'bower_components'
       }

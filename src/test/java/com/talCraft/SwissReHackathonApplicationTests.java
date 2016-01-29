@@ -1,4 +1,4 @@
-package in.co.waghmare;
+package com.talCraft;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -53,5 +53,7 @@ cloudfoundry {
     space = 'dev'
     file = new File('build/libs/swiss-re-hackathon.war')
     uri = 'ashish-swiss-re.mybluemix.net'
+    username = 'ashishwaghmare@gmail.com'
+    password = 'vatsala@123'
     application = 'ashish-swiss-re'
 }
